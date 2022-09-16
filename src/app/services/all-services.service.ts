@@ -24,15 +24,7 @@ export class AllServicesService {
         //     date: '4/5/6',
         //     done: true,
         //     id: 2,
-        //     list: 1,
-        // },
-        // {
-        //     title: 'رفتن به سرکار',
-        //     description: 'باید اسنپ بگیرم و تا میدان ونک بروم',
-        //     date: '7/8/9',
-        //     done: false,
-        //     id: 3,
-        //     list: 1,
+        //     list: 2,
         // },
     ];
 
@@ -49,7 +41,7 @@ export class AllServicesService {
     }
 
     public deleteLists(id: string) {
-        fetch(`http://localhost:3000/api/tasks/${id}`, {method: 'delete'}).then(
+        fetch(`http://localhost:3000/api/lists/${id}`, {method: 'delete'}).then(
             () => (this.allSubject = this.allSubject.filter((t) => t._id !== id))
         );
     }
@@ -76,7 +68,7 @@ export class AllServicesService {
         let myTask = {...this.allTasks[index]};
         myTask.done = !myTask.done;
 
-        fetch(`http://localhost:3000/ api/tasks/${id}`, {
+        fetch(`http://localhost:3000/api/tasks/${id}`, {
             method: 'put',
             body: JSON.stringify(myTask),
             headers: {'content-type': 'application/json'},

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {AllServicesService} from '../../services/all-services.service';
 
 @Component({
     selector: 'app-expansion',
@@ -7,6 +8,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
     styleUrls: ['./expansion.component.scss'],
 })
 export class ExpansionComponent {
+    public constructor(public service: AllServicesService) {}
+
     public panelOpenState: boolean = false;
 
     @Output() public addTask = new EventEmitter<string>();

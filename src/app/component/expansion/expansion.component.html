@@ -15,7 +15,7 @@
         <button mat-raised-button color='primary' (click)='addTask.emit(subjects._id)'>اضافه کردن تسک</button>
       </mat-action-row>
       <mat-action-row>
-        <button mat-raised-button color='primary'>حذف تسک</button>
+        <button mat-raised-button color='primary' (click)='service.deleteLists(subjects._id)'>حذف تسک</button>
       </mat-action-row>
     </div>
 

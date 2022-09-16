@@ -3,7 +3,14 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+}
+
+.section-part {
+  height: 250px;
+  width: 500px;
+  padding-bottom: 30px;
+  margin: 20px 0;
+  border: solid 5px blueviolet;
 }
 
 .container {

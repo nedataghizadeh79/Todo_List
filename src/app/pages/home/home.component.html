@@ -1,6 +1,9 @@
-<app-expansion *ngFor='let i of service.allSubject' class='expansion' [task]='service.allTasks'
+<app-expansion *ngFor='let i of service.allSubject' class='expansion'
+               [task]='service.allTasks'
                (addTask)='selectedId=$event'
-               [subjects]='i'></app-expansion>
+               [subjects]='i'
+
+></app-expansion>
 
 <app-form *ngIf='selectedId !=null' [wantedId]='selectedId'></app-form>
 
