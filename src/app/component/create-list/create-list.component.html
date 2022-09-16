@@ -1,0 +1,14 @@
+<section>
+  <div class='container'>
+
+    <mat-form-field appearance='fill'>
+      <mat-label>نام لیست</mat-label>
+      <input matInput type='text' [(ngModel)]='newInput'>
+    </mat-form-field>
+
+
+    <button class='new-list' mat-raised-button color='primary'>
+      <a routerLink='/done' (click)='service.addnewList( newInput)'> اضافه کردن لیست جدید </a>
+    </button>
+  </div>
+</section>

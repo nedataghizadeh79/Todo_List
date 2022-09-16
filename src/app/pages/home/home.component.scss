@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
+  font-size: larger;
+}
+
+.done-task {
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}

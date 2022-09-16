@@ -1,0 +1,23 @@
+<mat-accordion>
+
+  <mat-expansion-panel (opened)='panelOpenState = true'
+                       (closed)='panelOpenState = false'>
+    <mat-expansion-panel-header>
+      <mat-card-title>{{subjects.title}}</mat-card-title>
+    </mat-expansion-panel-header>
+
+    <div cdkDropList (cdkDropListDropped)='drop($event)'>
+      <app-card cdkDrag *ngFor='let i of filterList()' [taskInfo]='i'></app-card>
+    </div>
+
+    <div class='buttons' dir='ltr'>
+      <mat-action-row>
+        <button mat-raised-button color='primary' (click)='addTask.emit(subjects._id)'>اضافه کردن تسک</button>
+      </mat-action-row>
+      <mat-action-row>
+        <button mat-raised-button color='primary'>حذف تسک</button>
+      </mat-action-row>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>

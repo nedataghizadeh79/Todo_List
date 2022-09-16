@@ -1,0 +1,14 @@
+<app-expansion *ngFor='let i of service.allSubject' class='expansion' [task]='service.allTasks'
+               (addTask)='selectedId=$event'
+               [subjects]='i'></app-expansion>
+
+<app-form *ngIf='selectedId !=null' [wantedId]='selectedId'></app-form>
+
+
+<app-create-list></app-create-list>
+
+<section>
+  <button class='done-task' mat-raised-button color='primary'><a routerLink='/done'>مشاهده کارهای انجام شده</a>
+  </button>
+</section>
+
