@@ -6,11 +6,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DoneTaskModule} from './pages/done-task/done-task.module';
 import {HomeModule} from './pages/home/home.module';
 import {AllServicesService} from './services/all-services.service';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, DoneTaskModule, HomeModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        DoneTaskModule,
+        HomeModule,
+        FormsModule,
+        MatButtonModule,
+    ],
     providers: [AllServicesService],
     bootstrap: [AppComponent],
+    exports: [],
 })
 export class AppModule {}
