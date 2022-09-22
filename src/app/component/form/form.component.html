@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+        <mat-form-field appearance="fill">
+            <mat-label>عنوان</mat-label>
+            <input matInput [(ngModel)]="obj.title" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>توضیحات</mat-label>
+            <textarea matInput [(ngModel)]="obj.description"></textarea>
+        </mat-form-field>
+
+        <mat-action-row>
+            <section>
+                <button mat-raised-button color="primary" (click)="handleSubmitButton()" class="submit-button">
+                    ثبت اطلاعات
+                </button>
+            </section>
+        </mat-action-row>
+    </div>
+</section>

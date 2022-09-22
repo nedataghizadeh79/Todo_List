@@ -1,0 +1,35 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-part {
+  height: 250px;
+  width: 500px;
+  padding-bottom: 30px;
+  margin: 20px 0;
+  border: solid 5px blueviolet;
+}
+
+.container {
+  margin-top: 20px;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #520d91 solid 3px;
+  justify-content: center;
+}
+
+.new-list {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+a {
+  color: white;
+  font-weight: bolder;
+}

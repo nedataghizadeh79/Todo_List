@@ -1,0 +1,58 @@
+<mat-card class='example-card'>
+  <ng-container *ngIf='!isEditing; else showInput'>
+    <mat-card-title [class.line]='taskInfo.done'> عنوان: {{ taskInfo.title }}</mat-card-title>
+    <mat-card-content>
+      <p class='desc' [class.line]='taskInfo.done'>{{ taskInfo.description }}</p>
+
+      <h3>تاریخ: {{ taskInfo.date }}</h3>
+
+      <h3>وضعیت: {{taskInfo.done ? "انحام شده" : "انجام نشده :( "}}</h3>
+    </mat-card-content>
+
+
+    <mat-card-actions align='end'>
+      <button
+        (click)='service.deleteTask(taskInfo._id)'
+        mat-icon-button
+        color='primary'
+        aria-label='Example icon button with a delete icon'
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button
+        (click)='isEditing = true'
+        mat-icon-button
+        color='primary'
+        aria-label='Example icon button with a edit_square icon'
+      >
+        <mat-icon>edit_square</mat-icon>
+      </button>
+      <button
+        (click)='service.doneTask(taskInfo._id)'
+        mat-icon-button
+        color='primary'
+        aria-label='Example icon button with a check_box icon'
+      >
+        <mat-icon>check_box</mat-icon>
+      </button>
+      <button *ngIf='!isInMain' mat-raised-button color='primary' (click)='service.moveTask(taskInfo._id)'>
+        انتقال به لیست اصلی
+      </button>
+    </mat-card-actions>
+  </ng-container>
+
+  <ng-template class='container' #showInput>
+    <mat-label>عنوان</mat-label>
+
+    <input class='edit-input' matInput [(ngModel)]='newTitle' />
+
+    <mat-label>توضیحات</mat-label>
+
+    <textarea class='edit-text-area' matInput [(ngModel)]='newDescription'></textarea>
+
+    <mat-card-actions align='end'>
+      <button mat-raised-button color='primary' (click)='makeFalse()'>ذخیره</button>
+      <button mat-raised-button color='primary' (click)='isEditing = false'>لغو</button>
+    </mat-card-actions>
+  </ng-template>
+</mat-card>
